@@ -385,13 +385,7 @@ try:
 except ImportError as e:
     print(f"Note: Combined screen savers not loaded: {e}")
 
-# Add more variations
-for i in range(50):  # Create 50 more variations
-    base_saver = random.choice(screen_savers)
-    new_saver = type(f"Variation{i}", (base_saver.__class__,), {})()
-    new_saver.name = f"{base_saver.name} Variation {i+1}"
-    new_saver.duration = random.randint(3000, 10000)
-    screen_savers.append(new_saver)
+
 
 print(f"Total screen savers loaded: {len(screen_savers)}")
 

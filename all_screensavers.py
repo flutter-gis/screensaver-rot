@@ -17,13 +17,6 @@ try:
 except ImportError:
     CV2_AVAILABLE = False
 
-try:
-    import matplotlib.pyplot as plt
-    import matplotlib.animation as animation
-    MATPLOTLIB_AVAILABLE = True
-except ImportError:
-    MATPLOTLIB_AVAILABLE = False
-
 class ScreenSaver:
     def __init__(self, name: str, duration: int = 5000):
         self.name = name
@@ -909,18 +902,6 @@ all_screen_savers = [
     PlasmaEffect()
 ]
 
-# Create unique variations for each screen saver
-for i in range(5):  # 5 variations per screen saver
-    for base_saver in all_screen_savers[:]:  # Use slice to avoid infinite loop
-        # Create a unique variation with different parameters
-        variation = type(f"{base_saver.__class__.__name__}Variation{i}", 
-                        (base_saver.__class__,), {})()
-        variation.name = f"{base_saver.name} Variation {i+1}"
-        variation.duration = random.randint(3000, 10000)
-        
-        # Ensure colors are properly initialized
-        variation.colors = variation.generate_colors()
-        
-        all_screen_savers.append(variation)
+
 
 print(f"Total screen savers created: {len(all_screen_savers)}")
