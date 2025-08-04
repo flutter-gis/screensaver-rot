@@ -21,8 +21,8 @@ pygame.display.set_caption("ADHD Brain Rot Screen Savers")
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
-# Import base classes
-from base_screensaver import ScreenSaver, Particle
+# Import base classes from combined file
+from all_screensavers import ScreenSaver, Particle
 
 class CosmicDance(ScreenSaver):
     def __init__(self):
